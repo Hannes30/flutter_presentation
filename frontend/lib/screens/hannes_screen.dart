@@ -25,17 +25,21 @@ class HannesScreen extends StatelessWidget {
             style: GoogleFonts.roboto(fontSize: 24),
           ),
         ),
-        ElevatedButton(
-            style: const ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll<Color>(Colors.red)),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const FelixScreen()));
-            },
-            child: const Text(
-              "0",
-              style: TextStyle(fontSize: 24),
-            )),
+        Center(
+          child: ElevatedButton(
+              style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll<Color>(Colors.red)),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const FelixScreen()));
+              },
+              child: const Text(
+                "0",
+                style: TextStyle(fontSize: 24),
+              )),
+        ),
         Positioned(
           top: -100,
           child: Image.asset(
