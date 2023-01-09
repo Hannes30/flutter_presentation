@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_statefull_example/screens/BankingData.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'felix_screen.dart' show FelixScreen;
 
@@ -27,8 +28,17 @@ class HannesScreen extends StatelessWidget {
         ),
         Center(
           child: ElevatedButton(
-              style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll<Color>(Colors.red)),
+              style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                  )),
+                  /*side: MaterialStatePropertyAll<BorderSide>(
+                      BorderSide(width: 3)),*/
+                  padding: MaterialStateProperty.all(
+                      EdgeInsets.symmetric(horizontal: 70, vertical: 20)),
+                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      Color.fromARGB(255, 156, 188, 206))),
               onPressed: () {
                 Navigator.push(
                     context,
@@ -36,17 +46,30 @@ class HannesScreen extends StatelessWidget {
                         builder: (context) => const FelixScreen()));
               },
               child: const Text(
-                "0",
-                style: TextStyle(fontSize: 24),
+                "Zu Felix",
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               )),
         ),
-        Positioned(
-          top: -100,
-          child: Image.asset(
-            "images/triangles.png",
-          ),
-        )
+        Container(
+          height: 200,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage("images/triangles.png"),
+                  fit: BoxFit.cover)),
+        ),
       ]),
+      floatingActionButton: Container(
+        width: 75,
+        height: 75,
+        child: FloatingActionButton(
+          child: Icon(Icons.attach_money, size: 35),
+          backgroundColor: Colors.purple,
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const BankingData()));
+          },
+        ),
+      ),
     );
   }
 }
