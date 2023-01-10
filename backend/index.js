@@ -1,11 +1,11 @@
-import express, { Router } from 'express';
+import express, { Router } from "express";
 
 function getArrayRand(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
 
 function randDigit(length = 1) {
-  let str = '';
+  let str = "";
   for (let i = 0; i < length; i++) {
     str += Math.floor(Math.random() * 9);
   }
@@ -17,54 +17,54 @@ const banking = Router();
 
 const bank_list = [
   {
-    name: 'Volksbank',
-    bic: 'VBOEATWWVBG',
+    name: "Volksbank",
+    bic: "VBOEATWWVBG",
   },
   {
-    name: 'Raiffaisen',
-    bic: 'RZBAATWW',
+    name: "Raiffaisen",
+    bic: "RZBAATWW",
   },
   {
-    name: 'Erste Bank',
-    bic: 'GIBAATWWXXX',
+    name: "ErsteBank",
+    bic: "GIBAATWWXXX",
   },
   {
-    name: 'Visa',
-    bic: 'VISAUS62XXX',
+    name: "Visa",
+    bic: "VISAUS62XXX",
   },
 ];
-const country_codes = ['AT', 'DE', 'CH', 'LU'];
+const country_codes = ["AT", "DE", "CH", "LU"];
 
-banking.get('/', (req, res) => {
-  res.status(200).send('Here you can find banking informaiton.');
+banking.get("/", (req, res) => {
+  res.status(200).send("Here you can find banking informaiton.");
 });
 
-banking.get('/random', (req, res) => {
+banking.get("/random", (req, res) => {
   let country_code = getArrayRand(country_codes);
 
-  let card_num = '';
+  let card_num = "";
   let bank = getArrayRand(bank_list);
   for (let i = 0; i < 16; i++) {
     card_num += randDigit();
     if (i > 0 && (i + 1) % 4 == 0) {
-      card_num += ' ';
+      card_num += " ";
     }
   }
 
-  let iban = country_code + randDigit(2) + ' ';
+  let iban = country_code + randDigit(2) + " ";
   let iban_legnth = Math.random() * (32 - 18) + 18;
 
   for (let i = 0; i < iban_legnth; i++) {
     iban += randDigit();
     if (i > 0 && (i + 1) % 4 == 0) {
-      iban += ' ';
+      iban += " ";
     }
   }
 
   let expiration =
     Math.floor(Math.random() * 11) +
     1 +
-    '/' +
+    "/" +
     (Math.floor(Math.random() * 8) + 20);
 
   res.status(200).json({
@@ -75,8 +75,8 @@ banking.get('/random', (req, res) => {
   });
 });
 
-app.use('/banking', banking);
+app.use("/banking", banking);
 
 app.listen(8080, () => {
-  console.log('Listening on port 8080.');
+  console.log("Listening on port 8080.");
 });

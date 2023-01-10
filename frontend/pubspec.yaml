@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^3.0.1
   flutter_svg: ^1.1.6
   gradient_borders: ^0.2.0
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -59,7 +60,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   assets:
-    - images/card.png
+    - images/Visa.png
     - images/Hannes_Flutter.png
     - images/left-triangle.png
     - images/right-triangle.png
@@ -67,6 +68,9 @@ flutter:
     - images/circles.svg
     - images/arrow.svg
     - images/portrait.png
+    - images/Volksbank.png
+    - images/Raiffaisen.png
+    - images/ErsteBank.png
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:

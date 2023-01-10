@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_statefull_example/screens/BankingData.dart';
+import 'package:flutter_statefull_example/screens/banking_data.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'felix_screen.dart' show FelixScreen;
 
@@ -36,8 +36,8 @@ class HannesScreen extends StatelessWidget {
                   /*side: MaterialStatePropertyAll<BorderSide>(
                       BorderSide(width: 3)),*/
                   padding: MaterialStateProperty.all(
-                      EdgeInsets.symmetric(horizontal: 70, vertical: 20)),
-                  backgroundColor: MaterialStatePropertyAll<Color>(
+                      const EdgeInsets.symmetric(horizontal: 70, vertical: 20)),
+                  backgroundColor: const MaterialStatePropertyAll<Color>(
                       Color.fromARGB(255, 156, 188, 206))),
               onPressed: () {
                 Navigator.push(
@@ -58,16 +58,16 @@ class HannesScreen extends StatelessWidget {
                   fit: BoxFit.cover)),
         ),
       ]),
-      floatingActionButton: Container(
+      floatingActionButton: SizedBox(
         width: 75,
         height: 75,
         child: FloatingActionButton(
-          child: Icon(Icons.attach_money, size: 35),
           backgroundColor: Colors.purple,
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const BankingData()));
           },
+          child: const Icon(Icons.attach_money, size: 35),
         ),
       ),
     );

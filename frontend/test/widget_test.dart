@@ -6,7 +6,7 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter/material.dart';
-import 'package:flutter_statefull_example/screens/BankingData.dart';
+import 'package:flutter_statefull_example/screens/banking_data.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
