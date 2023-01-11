@@ -141,7 +141,7 @@ class _CardInfosState extends State<CardInfos> {
 
 Future<BankingCard> fetchBankData() async {
   final response =
-      await http.get(Uri.parse('http://10.0.2.2:8080/banking/random'));
+      await http.get(Uri.parse('http://localhost:8080/banking/random'));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
