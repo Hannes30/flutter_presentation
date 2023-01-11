@@ -16,14 +16,18 @@ class HannesScreen extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             "Hannes Scheibelauer",
-            style: TextStyle(fontSize: 34),
+            style: TextStyle(
+                fontSize: 34,
+                color: Color.fromARGB(255, 51, 71, 82),
+                fontWeight: FontWeight.bold),
           ),
         ),
         Container(
           margin: const EdgeInsets.all(30),
           child: Text(
-            "Ich bin ein 17 jähriger Schüler der It-htl ybbs der sich gerne mit Web-, software- und game- development beschäftigt. Aktuell beschäftige ich mich mit Flutter und Blender.",
-            style: GoogleFonts.roboto(fontSize: 24),
+            "Ich bin ein 17 jähriger Schüler der It-htl ybbs der sich gerne mit Web-, software- und game- development beschäftigt. Aktuell lerne ich Rust und arbeite an einen 3D Game.",
+            style: GoogleFonts.roboto(
+                fontSize: 24, color: Colors.black, height: 1.5),
           ),
         ),
         Center(
