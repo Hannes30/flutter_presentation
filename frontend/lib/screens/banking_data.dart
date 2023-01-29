@@ -53,8 +53,7 @@ class _BankingDataState extends State<BankingData> {
               } else if (snapshot.hasError) {
                 return Text('${snapshot.error}');
               }
-
-              // By default, show a loading spinner.
+              //loading spinner.
               return const CircularProgressIndicator();
             },
           ),
